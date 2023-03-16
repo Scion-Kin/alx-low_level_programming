@@ -1,1 +1,1 @@
-This is a repo containing scripts used to interact with the shell
+This is a repo containing alx c programming projects
