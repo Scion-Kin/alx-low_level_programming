@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - This program uses puts function instead of printf
- * return - 0 (Success)
+ * Return: 0 (Success)
  */
 int main(void)
 {
