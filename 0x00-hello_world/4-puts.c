@@ -1,8 +1,7 @@
 #include <stdio.h>
 /**
- * This is my program 
- * Main initializes the machine to run the program
- * Return 0 tells that the program ran successfully
+ * main - This program uses puts function instead of printf
+ * return: 0 (Success)
  */
 int main(void)
 {
