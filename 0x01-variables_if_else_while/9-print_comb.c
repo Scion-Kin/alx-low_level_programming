@@ -11,12 +11,12 @@ int main(void)
 	{
 		if (a == 57)
 		{
-			putchar('$');
 			continue;
 		}
 		putchar(a);
 		putchar(',');
 		putchar(' ');
 	}
+	putchar('\n');
 	return (0);
 }
