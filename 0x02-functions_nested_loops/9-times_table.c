@@ -13,11 +13,11 @@ void times_table(void)
 		{
 			for (c = 0; c <= 9; c++)
 			{
-				e = d * c
 				if (a >= 10)
 				{
 					continue;
 				}
+				e = d * c;
 				if (e > 9)
 				{
 					b = e % 10;
