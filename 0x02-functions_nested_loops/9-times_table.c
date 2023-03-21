@@ -26,10 +26,11 @@ void times_table(void)
 			{
 				if (c != 0)
 				{
+					_putchar(44);
 					_putchar(32);
 					_putchar(32);
 				}
-				_putchar(44);
+				_putchar(e + '0');
 			}
 		}
 		_putchar('\n');
