@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _isalpha(int c) - checks if letter is upper or lowercase
+ * _isalpha - checks if letter is upper or lowercase
  * @c: reference to the ascii code
  * Return: 1 (Yes) 0 (No)
  */
@@ -11,7 +11,7 @@ int _isalpha(int c)
 	{
 		return (1);
 	}
-	else 
+	else
 	{
 		return (0);
 	}
