@@ -22,6 +22,10 @@ void times_table(void)
 				{
 					e = d * c;
 					_putchar(e + 48);
+					if (a = 10)
+					{
+						continue;
+					}
 					_putchar(',');
 					_putchar(' ');
 					_putchar(' ');
