@@ -19,7 +19,7 @@ void times_table(void)
 			for (d = 0; d <= 9; d++)
 			{
 				for (c = 0; c <= 9; c++)
-				
+				{
 					e = d * c;
 					_putchar(e + 48);
 					_putchar(',');
