@@ -4,7 +4,7 @@
  * @int: integer input
  * Return: result
  */
-int add(int, int)
+int add(void)
 {
 	int n, e, b;
 
