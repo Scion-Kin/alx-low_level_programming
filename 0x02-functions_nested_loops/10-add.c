@@ -4,11 +4,11 @@
  * @int: integer input
  * Return: result
  */
-int add(void)
+int add(int, int)
 {
 	int n, e, b;
 
-	n = e + b;
+	n = add(e, b);
 	return (n);
 }
 
