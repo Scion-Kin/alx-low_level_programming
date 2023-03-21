@@ -12,7 +12,7 @@ void times_table(void)
 	{
 		for (b = 0; b <= 10; b++)
 		{
-			if (b = 10)
+			if (b >= 10)
 			{
 				continue;
 			}
