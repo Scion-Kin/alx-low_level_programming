@@ -6,9 +6,9 @@
  */
 int add(int, int)
 {
-	int n, e, b;
+	int n;
 
-	n = add(e, b);
+	n = add(int, int);
 	return (n);
 }
 
