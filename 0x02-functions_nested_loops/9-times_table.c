@@ -17,16 +17,19 @@ void times_table(void)
 			{
 				b = e % 10;
 				f = (e - b) / 10;
-				_putchar(f + 48);
-				_putchar(b + 48);
-				_putchar(',');
-				_putchar(' ');
+				_putchar(44);
+				_putchar(32);
+				_putchar(f + '0');
+				_putchar(b + '0');
 			}
 			else
 			{
-				_putchar(e + 48);
-				_putchar(',');
-				_putchar(' ');
+				if (y != 0)
+				{
+					_putchar(32);
+					_putchar(32);
+				}
+				_putchar(44);
 			}
 		}
 		_putchar('\n');
