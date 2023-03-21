@@ -4,7 +4,7 @@
  * @i: integer input
  * Return: 0 (Success)
  */
-int _abs(int i);
+int _abs(int i)
 {
 	if (i >= 0)
 	{
