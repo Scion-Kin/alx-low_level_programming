@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * main - check the code.
- *
+ * _islower - prints if letter is lowercase
+ * @c: ASCII code referrer
  * Return: Always 0.
  */
-int _islower(int c);
+int _islower(int c)
 {
 	if ( c >=97 && c <= 122)
 	{
@@ -16,4 +16,3 @@ int _islower(int c);
 		return (0);
 	}
 	_putchar('\n');
-}
