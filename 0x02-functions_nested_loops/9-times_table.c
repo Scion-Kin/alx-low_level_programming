@@ -21,11 +21,7 @@ void times_table(void)
 				for (c = 0; c <= 9; c++)
 				{
 					e = d * c;
-					_putchar(e + 48);
-					if (a >= 10)
-					{
-						continue;
-					}
+					_putchar('e');
 					_putchar(',');
 					_putchar(' ');
 					_putchar(' ');
