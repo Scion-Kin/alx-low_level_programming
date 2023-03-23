@@ -2,7 +2,7 @@
 
 /**
  * print_most_numbers - prints 0 to 9 except 2 and 4
- * Retun: Always 0
+ * Return: Always 0
  */
 
 void print_most_numbers(void)
@@ -15,7 +15,10 @@ void print_most_numbers(void)
 		{
 			continue;
 		}
-		_putchar(a);
+		else
+		{
+			_putchar(a);
+		}
 		a++;
 	}
 	_putchar('\n');
