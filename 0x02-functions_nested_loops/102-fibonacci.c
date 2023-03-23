@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	int prev1 = 1, prev2 = 2, current, i;
+	long prev1 = 1, prev2 = 2, current, i;
 
 	printf("%d %d ", prev1, prev2);
 
