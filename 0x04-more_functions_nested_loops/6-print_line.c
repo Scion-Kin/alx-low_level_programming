@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * print_line - prints a straight line in the terminal
+ * @n: input times
  * Return: void
  */
 void print_line(int n)
