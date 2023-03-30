@@ -2,7 +2,8 @@
 /**
  * string-toupper - changes all lowercase letters
  * of a string to uppercase.
- * Return: 0
+ * @a: input
+ * Return: a
  */
 char *string_toupper(char *a)
 {
@@ -11,9 +12,9 @@ char *string_toupper(char *a)
 	b = 0
 	while (a[b] != '\0')
 	{
-		if (a[b] == '90' && a[b] <= '122')
+		if (a[b] == 'a' && a[b] <= 'z')
 		{
-			a[b] = a[b] - '32';
+			a[b] = a[b] - 32;
 		}
 		a[b]++;
 	}
