@@ -3,13 +3,25 @@
  * *_strcat - concatenates two strings.
  * *dest: string one
  * *src: string two
- * Return:vpointer to dest
+ * Return: pointer to dest
  */
 char *_strcat(char *dest, char *src)
 {
-	char *p;
+	int a;
+	int b;
 
-	p = &dest;
-	p = _strcat(dest, src);
-	return (p);
+	a = 0;
+	while (dest[a] != '\0')
+	{
+		a++;
+	}
+	b = 0;
+	while (src[b] != '\0')
+	{
+		dest[a] = src[b];
+		a++;
+		b++;
+	}
+	dest[a] = '\0';
+	return (dest);
 }
