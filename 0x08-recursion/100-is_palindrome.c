@@ -35,7 +35,7 @@ int _strlen_recursion(char *s)
  * @b: length of the string
  * Return: 1 if palindrome, 0 if not
  */
-int check_pal(char *s, int a, int a)
+int check_pal(char *s, int a, int b)
 {
 	if (*(s + a) != *(s + a - 1))
 		return (0);
