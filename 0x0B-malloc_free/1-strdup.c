@@ -9,24 +9,23 @@
 char *_strdup(char *str)
 {
 	char *bef;
-	int a, b;
+	int a, b = 0;
+
 	if (str == NULL)
-	{
 		return (NULL);
-	}
 	a = 0;
-	bef = malloc(sizeof(char) * (a + 1));
 	while (str[a] != '\0')
 	{
-		for (b = 0; b <= str[a]; b++)
-		{
-			bef[b] = str[a];
-		}
 		a++;
 	}
+	bef = malloc(sizeof(char) * (a + 1));
 	if (bef == NULL)
 	{
 		return (NULL);
+	}
+	for (b = 0; str[b]; b++)
+	{
+		bef[b] = str[b];
 	}
 	return (bef);
 }
