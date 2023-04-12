@@ -8,17 +8,17 @@
  */
 char *create_array(unsigned int size, char c)
 {
-	char *bef;
+	char bef;
 	unsigned int a;
 
 	bef = malloc(sizeof(char) * size);
-	if (size == 0 || str == NULL)
+	if (size == 0 || bef == NULL)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < size; i++)
+	for (a = 0; a < size; a++)
 	{
-		str[i] = c;
+		bef[a] = c;
 	}
-	return (str);
+	return (bef);
 }
