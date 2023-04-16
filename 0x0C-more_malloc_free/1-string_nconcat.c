@@ -32,7 +32,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		a++;
 	}
 
-	while (n < d && i < (c + n))
+	while (n < d && a < (c + n))
 		bef[a++] = s2[b++];
 
 	while (n >= d && a < (c + d))
