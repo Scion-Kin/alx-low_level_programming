@@ -18,7 +18,7 @@ int length(char *p)
 }
 /**
  * *copy - copies the string pointed to by befe
- * including the terminating null byte (\0) to 
+ * including the terminating null byte (\0) to
  * the buffer pointed to by dest
  * @bef: pointer to the buffer in which we copy the string
  * @befe: string to be copied
