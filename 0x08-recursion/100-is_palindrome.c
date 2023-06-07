@@ -1,37 +1,53 @@
 #include "main.h"
 
-int check_pal(char *s, int i, int len);
-int _strlen_recursion(char *s);
+int _strcmp(char *s, char *a);
+int len(char *s);
 
 /**
  * is_palindrome - checks if a string is a palindrome
- * @s: string to reverse
+ * @s: string to check
  *
- * Return: 1 if it is, 0 it's not
+ * Return: 1 if it is a palindrome, 0 otherwise
  */
 int is_palindrome(char *s)
 {
-	char a[100];
+    char a[100];
 
-	if (*s == '\0')
-		return;
-	is_palindrome(s + 1);
-	*a = *s;
-	return (_strcmp(s, a));
+    if (*s == '\0')
+        return 1;
+
+    is_palindrome(s + 1);
+    *a = *s;
+    return _strcmp(s, a) != 0;
 }
 
 /**
- * _strcmp - compares strings
- * @s: string one
- * @a:string two
- * return: 1 or 0
+ * len - calculates the length of a string
+ * @s: input string
+ *
+ * Return: length of the string
  */
-
-int _strcmp(int *s, int *a)
+int len(char *s)
 {
-	if (*s != *a)
-		return (0);
-	s++;
-	a++;
-	return(1);
+    if (*s == '\0')
+        return 0;
+    return 1 + len(s + 1);
+}
+
+/**
+ * _strcmp - compares two strings
+ * @s: first string
+ * @a: second string
+ *
+ * Return: 0 if the strings are equal, non-zero otherwise
+ */
+int _strcmp(char *s, char *a)
+{
+    if (len(s) != len(a))
+        return 0;
+    if (*s != *a)
+        return 0;
+    if (*s == '\0')
+        return 1;
+    return _strcmp(s + 1, a + 1);
 }
