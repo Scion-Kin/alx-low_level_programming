@@ -1,53 +1,47 @@
 #include "main.h"
 
-int _strcmp(char *s, char *a);
-int len(char *s);
+int str_length(char *s);
+int is_palindrome_recursive(char *start, char *end);
 
 /**
  * is_palindrome - checks if a string is a palindrome
- * @s: string to check
+ * @s: the string to check
  *
- * Return: 1 if it is a palindrome, 0 otherwise
+ * Return: 1 if the string is a palindrome, 0 otherwise
  */
 int is_palindrome(char *s)
 {
-    char a[100];
-
-    if (*s == '\0')
-        return 1;
-
-    is_palindrome(s + 1);
-    *a = *s;
-    return _strcmp(s, a) != 0;
+    int length = str_length(s);
+    return is_palindrome_recursive(s, s + length - 1);
 }
 
 /**
- * len - calculates the length of a string
- * @s: input string
+ * str_length - calculates the length of a string
+ * @s: the string
  *
- * Return: length of the string
+ * Return: the length of the string
  */
-int len(char *s)
+int str_length(char *s)
 {
     if (*s == '\0')
         return 0;
-    return 1 + len(s + 1);
+    return 1 + str_length(s + 1);
 }
 
 /**
- * _strcmp - compares two strings
- * @s: first string
- * @a: second string
+ * is_palindrome_recursive - helper function to check if a string is a palindrome recursively
+ * @start: the pointer to the start of the string
+ * @end: the pointer to the end of the string
  *
- * Return: 0 if the strings are equal, non-zero otherwise
+ * Return: 1 if the string is a palindrome, 0 otherwise
  */
-int _strcmp(char *s, char *a)
+int is_palindrome_recursive(char *start, char *end)
 {
-    if (len(s) != len(a))
-        return 0;
-    if (*s != *a)
-        return 0;
-    if (*s == '\0')
+    if (start >= end)
         return 1;
-    return _strcmp(s + 1, a + 1);
+
+    if (*start != *end)
+        return 0;
+
+    return is_palindrome_recursive(start + 1, end - 1);
 }
