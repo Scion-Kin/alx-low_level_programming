@@ -25,5 +25,5 @@ int prime(int n, int a)
 		return (0);
 	if (n % a && (a == 1 || a == n))
 		return (1);
-	return (prime(n, a - 1);
+	return (prime(n, a - 1));
 }
