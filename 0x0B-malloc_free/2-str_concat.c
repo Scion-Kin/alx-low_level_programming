@@ -23,8 +23,8 @@ char *str_concat(char *s1, char *s2)
 	if (joined == NULL)
 		return (NULL);
 	while (s1[i] != '\0')
-		joined[k] = s1[k];
+		joined[i] = s1[i];
 	while (s2[j] != '\0')
-		joined[k++] = s2[l];
+		joined[i++] = s2[j];
 	return(joined);
 }
