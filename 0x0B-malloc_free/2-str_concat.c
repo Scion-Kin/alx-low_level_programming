@@ -9,8 +9,8 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *joined;
-	int i = 0, j = 0, k, l;
-
+	int i = 0, j = 0;
+	
 	if (s1 == NULL)
 		s1 = "";
 	while(s1[i] != '\0')
@@ -22,9 +22,9 @@ char *str_concat(char *s1, char *s2)
 	joined = malloc((i + j + 1) * sizeof(char));
 	if (joined == NULL)
 		return (NULL);
-	for (k = 0; k <= i; k++)
+	while (s1[i] != '\0')
 		joined[k] = s1[k];
-	for (l = 0; l <= j; l++)
+	while (s2[j] != '\0')
 		joined[k++] = s2[l];
 	return(joined);
 }
