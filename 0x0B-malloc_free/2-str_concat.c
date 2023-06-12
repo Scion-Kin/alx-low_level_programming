@@ -13,12 +13,14 @@ char *str_concat(char *s1, char *s2)
 	char *joined;
 	int i = 0, j = 0, k, l;
 
-	if (s1 == NULL)
-		return (NULL);
+	if (s1 == NULL && s2 == NULL)
+		return(NULL);
+	if (s1 == NULL && s2 != NULL)
+		return (s2);
 	while(s1[i] != '\0')
 		i++;
-	if (s2 == NULL)
-		return (NULL);
+	if (s2 == NULL && s1 != NULL)
+		return (s1);
 	while(s2[j] != '\0')
 		j++;
 	joined = malloc((i + j + 1) * sizeof(char));
