@@ -10,15 +10,11 @@
 int main(int argc, char *argv[])
 {
 	int sum = 0;
-	int i = 0;
+	int i;
 
-	if (argc > 0)
+	for (i = 0; i < argc; i++)
 	{
-		while (argc--)
-		{
-			sum += 1;
-			i++;
-		}
+		sum += 1;
 	}
 	printf("%d\n", sum);
 	return (0);
