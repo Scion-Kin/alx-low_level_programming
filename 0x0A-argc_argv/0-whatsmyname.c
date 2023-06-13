@@ -4,8 +4,8 @@
 /**
  * main - prints the name of the program
  * @argc: argument count
- * @argv[]: argument vector(but I like volt! haha)
- * Return: 0 is success
+ * @argv: argument vector
+ * Return: success
  */
 
 int main(int argc, char *argv[])
