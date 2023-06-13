@@ -12,7 +12,8 @@ int main(argc, *argv[])
 	int i = 0;
 
 	if (argc > 0)
-	{
 		printf("%s", argv[i]);
-	}
+	else
+		break;
+	return (0);
 }
