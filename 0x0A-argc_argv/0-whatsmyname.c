@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
  * main - prints the name of the program
@@ -10,9 +9,7 @@
 
 int main(int argc, int *argv[])
 {
-	int i = 0;
-
 	if (argc > 0)
-		printf("%s\n", argv[i]);
+		printf("%s\n", argv[0]);
 	return (0);
 }
