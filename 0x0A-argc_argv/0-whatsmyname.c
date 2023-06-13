@@ -15,6 +15,6 @@ int main(int argc, char *argv[])
 		printf("%s\n", argv[0]);
 	}
 	else
-		exit (1);
+		exit(1);
 	return (0);
 }
