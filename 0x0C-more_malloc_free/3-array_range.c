@@ -5,14 +5,15 @@
  * array_range - creates an array of integers
  * @min: smaller number
  * @max: bigger number
- * n: bytes to concatenate
  * Return: pointer to result
  */
 
 int *array_range(int min, int max)
 {
-	int *array, dif; int i = 0;
-	
+	int *array;
+	int dif;
+	int i = 0;
+
 	if (min > max)
 		return (NULL);
 	dif = max - min;
