@@ -2,7 +2,8 @@
 #include "main.h"
 
 /**
- * main - prints the name of the file it was compiled from
+ * main - prints the name of the
+ * file it was compiled from
  * Return: 0 is Success
  */
 
