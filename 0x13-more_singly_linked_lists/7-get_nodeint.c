@@ -3,6 +3,7 @@
 /**
  * get_nodeint_at_index - returns the nth node of a list
  * @head: list pointer
+ * @index: number of iteration times
  * Return: nth node
  */
 
