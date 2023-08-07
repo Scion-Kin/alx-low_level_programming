@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <elf.h>
@@ -8,7 +10,7 @@
  */
 void print_error(const char *msg)
 {
-	fprintf(stderr, "%s\n", msg);
+	dprintf(STDERR_FILENO, "%s\n", msg);
 	exit(98);
 }
 
@@ -18,8 +20,10 @@ void print_error(const char *msg)
  */
 void display_elf_header(Elf64_Ehdr *elf_header)
 {
+	int i;
+
 	printf("  Magic:   ");
-	for (int i = 0; i < EI_NIDENT; i++)
+	for (i = 0; i < EI_NIDENT; i++)
 		printf("%02x ", elf_header->e_ident[i]);
 	printf("\n");
 
@@ -30,7 +34,7 @@ void display_elf_header(Elf64_Ehdr *elf_header)
 		printf("ELF64\n");
 	else
 		printf("Invalid class\n");
-    
+
 	printf("  Data:                              ");
 	if (elf_header->e_ident[EI_DATA] == ELFDATA2LSB)
 		printf("2's complement, little endian\n");
@@ -41,8 +45,7 @@ void display_elf_header(Elf64_Ehdr *elf_header)
 
 	printf("  Version:                           %d (current)\n", elf_header->e_ident[EI_VERSION]);
 	printf("  OS/ABI:                            ");
-	switch (elf_header->e_ident[EI_OSABI])
-	{
+	switch (elf_header->e_ident[EI_OSABI]) {
 		case ELFOSABI_SYSV:     printf("UNIX - System V\n"); break;
 		case ELFOSABI_HPUX:     printf("HP-UX\n"); break;
 		case ELFOSABI_NETBSD:   printf("NetBSD\n"); break;
@@ -56,11 +59,10 @@ void display_elf_header(Elf64_Ehdr *elf_header)
 		case ELFOSABI_STANDALONE: printf("Standalone (embedded) application\n"); break;
 		default:                printf("Unknown\n"); break;
 	}
-    
+
 	printf("  ABI Version:                       %d\n", elf_header->e_ident[EI_ABIVERSION]);
 	printf("  Type:                              ");
-	switch (elf_header->e_type)
-	{
+	switch (elf_header->e_type) {
 		case ET_NONE:   printf("NONE (None)\n"); break;
 		case ET_REL:    printf("REL (Relocatable file)\n"); break;
 		case ET_EXEC:   printf("EXEC (Executable file)\n"); break;
@@ -68,7 +70,7 @@ void display_elf_header(Elf64_Ehdr *elf_header)
 		case ET_CORE:   printf("CORE (Core file)\n"); break;
 		default:        printf("Unknown\n"); break;
 	}
-    
+
 	printf("  Entry point address:               %#lx\n", (unsigned long)elf_header->e_entry);
 }
 
@@ -80,22 +82,25 @@ void display_elf_header(Elf64_Ehdr *elf_header)
  */
 int main(int argc, char *argv[])
 {
+	int fd;
+	ssize_t bytes_read;
+	Elf64_Ehdr elf_header;
+
 	if (argc != 2)
 		print_error("Usage: elf_header elf_filename");
-    
-	int fd = open(argv[1], O_RDONLY);
+
+	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 		print_error("Error opening file");
 
-	Elf64_Ehdr elf_header;
-	ssize_t bytes_read = read(fd, &elf_header, sizeof(elf_header));
+	bytes_read = read(fd, &elf_header, sizeof(elf_header));
 	if (bytes_read != sizeof(elf_header))
 		print_error("Error reading ELF header");
 
 	if (elf_header.e_ident[EI_MAG0] != ELFMAG0 ||
-		elf_header.e_ident[EI_MAG1] != ELFMAG1 ||
-		elf_header.e_ident[EI_MAG2] != ELFMAG2 ||
-		elf_header.e_ident[EI_MAG3] != ELFMAG3)
+	    elf_header.e_ident[EI_MAG1] != ELFMAG1 ||
+	    elf_header.e_ident[EI_MAG2] != ELFMAG2 ||
+	    elf_header.e_ident[EI_MAG3] != ELFMAG3)
 		print_error("Not an ELF file");
 
 	display_elf_header(&elf_header);
