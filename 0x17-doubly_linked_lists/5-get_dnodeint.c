@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * get_dnodeint - searches for the n-nth node of a list.
+ * get_dnodeint_at_index - searches for the n-nth node of a list.
  * @head: the linked list to traverse
  * @index: the index of the node to search for
  * Return: the found node
