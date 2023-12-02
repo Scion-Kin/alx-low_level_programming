@@ -1,21 +1,21 @@
-#include "hashnews.h"
+#include "hash_tables.h"
 
 /**
- * hashnew_create - creates a hasnew
+ * hashtable_create - creates a hasnew
  * @size: the desired size for thenew
  * Return: the creatednew
 */
 
-hashnew_t *hashnew_create(unsigned long int size)
+hash_table_t *hash_table_create(unsigned long int size)
 {
-	hashnew_t *new;
+	hash_table_t *new;
 
 	if (size == 0)
 		return (NULL);
 
-	new = malloc(sizeof(hashnew_t));
+	new = malloc(sizeof(hash_table_t));
 
-	if new == NULL)
+	if (new == NULL)
 		return (NULL);
 
 	new->size = size;
