@@ -1,25 +1,45 @@
 #include "hash_tables.h"
-
-/**
- * main - check the code
- *
- * Return: Always EXIT_SUCCESS.
- */
+#include <stdio.h>
 
 int main(void)
 {
-		char *s;
-		unsigned long int hash_table_array_size;
+    hash_table_t *ht;
+    unsigned long int index;
 
-		hash_table_array_size = 1024;
-		s = "cisfun";
-		printf("%lu\n", hash_djb2((unsigned char *)s));
-		printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
-		s = "Don't forget to tweet today";
-		printf("%lu\n", hash_djb2((unsigned char *)s));
-		printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
-		s = "98";
-		printf("%lu\n", hash_djb2((unsigned char *)s));
-		printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
-		return (EXIT_SUCCESS);
+    ht = hash_table_create(1);
+    if (ht == NULL)
+    {
+        fprintf(stderr, "Failed to create hash table.\n");
+        return (EXIT_FAILURE);
+    }
+
+    if (!hash_table_set(ht, "betty", "cool") ||
+        !hash_table_set(ht, "mark", "cool") ||
+        !hash_table_set(ht, "betty", "cooler"))
+    {
+        fprintf(stderr, "Failed to set values in the hash table.\n");
+        return (EXIT_FAILURE);
+    }
+
+    index = key_index((const unsigned char *)"betty", 1);
+
+    if (ht->array[index] != NULL)
+    {
+        printf("Key: %s, Value: %s\n", ht->array[index]->key, ht->array[index]->value);
+
+        if (ht->array[index]->next != NULL)
+        {
+            printf("Key: %s, Value: %s\n", ht->array[index]->next->key, ht->array[index]->next->value);
+        }
+        else
+        {
+            printf("No linked list for the key 'betty'.\n");
+        }
+    }
+    else
+    {
+        printf("No entry found for the key 'betty'.\n");
+    }
+
+    return (EXIT_SUCCESS);
 }
