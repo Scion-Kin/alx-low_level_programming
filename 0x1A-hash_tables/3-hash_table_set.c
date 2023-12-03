@@ -4,7 +4,7 @@
  * bring_node - makes a new for a hash table
  * @key: the key
  * @value: the value
- * Return: the new new
+ * Return: the new node
  */
 
 hash_node_t *bring_node(const char *key, const char *value)
