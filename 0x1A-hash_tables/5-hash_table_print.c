@@ -1,5 +1,11 @@
 #include "hash_tables.h"
-#include <stdio.h>
+
+/**
+ * hash_table_print - prints the contents of a hash table in form
+ * of a python dictionary
+ * @ht: the  hash table
+ * Return: none
+*/
 
 void hash_table_print(const hash_table_t *ht)
 {
@@ -23,4 +29,3 @@ void hash_table_print(const hash_table_t *ht)
 		}
 		printf("}\n");
 }
-
