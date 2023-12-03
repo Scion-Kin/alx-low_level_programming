@@ -8,22 +8,22 @@
 
 void hash_table_delete(hash_table_t *ht)
 {
-	hash_node_t *current;
-	unsigned long int i = 0;
+	hash_node_t *current, *post;
+	unsigned long int i;
 
-	for (; i < ht->size; i++)
+	for (i = 0; i < ht->size; i++)
 	{
 		current = ht->array[i];
-		if (current != NULL)
+		while (current != NULL)
 		{
+			post = current->next;
 			free(current->key);
-			current->key = NULL;
 			free(current->value);
-			current->value = NULL;
 			free(current);
-			current = NULL;
+			current = post;
 		}
+		ht->array[i] = NULL;
 	}
+
 	free(ht);
-	ht = NULL;
 }
