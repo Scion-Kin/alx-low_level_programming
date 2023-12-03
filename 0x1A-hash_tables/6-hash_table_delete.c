@@ -11,6 +11,9 @@ void hash_table_delete(hash_table_t *ht)
 	hash_node_t *current, *post;
 	unsigned long int i;
 
+	if (ht == NULL || ht->array == NULL)
+		return NULL;
+
 	for (i = 0; i < ht->size; i++)
 	{
 		current = ht->array[i];
