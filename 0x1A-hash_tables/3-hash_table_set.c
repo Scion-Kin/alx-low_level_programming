@@ -47,7 +47,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	node = bring_node(key, value);
 	if (node == NULL)
-		return 0;
+		return (0);
 
 	if (key == NULL || value == NULL || ht == NULL)
 		return (0);
